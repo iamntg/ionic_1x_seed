@@ -1,0 +1,32 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-light custom-nav-bar" ng-class="{ 'bar-custom-other' : stateValue != 'app.home' }">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" ng-click="toggleDrawer()">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="page-load" on-touch="onTouch()"></ion-nav-view>
+    </ion-side-menu-content>
+    <drawer side="left" class="ionicseed-drawer">
+        <ion-content class="side-menu-container" scroll="true">
+            <div class="profile-info">
+                <div class="avatar"><img src="assets/images/default_avatar.png" /></div>
+                <div class="user-name">{{sideMenuCtrl.userDetails.Name}}</div>
+                <div class="user-email">{{sideMenuCtrl.userDetails.UserName}}</div>
+                <div class="user-phone">{{sideMenuCtrl.userDetails.Phone}}</div>
+                <div class="user-role">{{sideMenuCtrl.userDetails.DptTitle}}</div>
+            </div>
+            <div class="list">
+                <div class="item item-icon-left" ng-repeat="menu in sideMenuCtrl.sideMenu" ng-click="sideMenuCtrl.goToState(menu)">
+                    <i class="icon" ng-class="menu.Icon"></i> {{menu.ItemName}}
+                </div>
+            </div>
+            <div class="app-version">
+                <p>v {{parentCtrl.appVersion}}</p>
+            </div>
+        </ion-content>
+    </drawer>
+</ion-side-menus>

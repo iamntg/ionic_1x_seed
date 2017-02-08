@@ -1,0 +1,228 @@
+/* Common Styles - This file should be included in the ionic.app.scss*/
+
+/*Variables used in this scss*/
+
+$montserrat-black: 'Montserrat-Black' !default;
+$montserrat-bold: 'Montserrat-Bold' !default;
+$montserrat-light: 'Montserrat-Light' !default;
+$montserrat-regular: 'Montserrat-Regular' !default;
+$montserrat-semibold: 'Montserrat-SemiBold' !default;
+$montserrat-medium: 'Montserrat-Medium' !default;
+$font-path: "../assets/fonts" !default;
+
+/*Mixin for font faces*/
+
+@mixin font-faces($font-name, $font-path) {
+    @font-face {
+        font-family: $font-name;
+        //        src: url('#{$font-path}/#{$font-name}/#{$font-name}.eot');
+        src: url('#{$font-path}/#{$font-name}/#{$font-name}.woff') format('woff'),
+        url('#{$font-path}/#{$font-name}/#{$font-name}.woff2') format('woff2'),
+        url('#{$font-path}/#{$font-name}/#{$font-name}.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+@include font-faces($montserrat-black,
+$font-path);
+@include font-faces($montserrat-bold,
+$font-path);
+@include font-faces($montserrat-light,
+$font-path);
+@include font-faces($montserrat-regular,
+$font-path);
+@include font-faces($montserrat-semibold,
+$font-path);
+@include font-faces($montserrat-medium,
+$font-path);
+
+/***************************** Common Styles ***************************/
+
+body {
+    font-family: $montserrat-regular;
+}
+
+.button {
+    min-height: 50px;
+    font-size: 16px;
+    font-family: $montserrat-medium;
+    border-radius: 50px;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-bg {
+    border: none !important;
+    background: none !important;
+}
+
+.bar-custom-main {
+    .bar {
+        background: $light;
+        .title {
+            color: $positive;
+            font-size: 28px;
+            line-height: 48px;
+            font-family: $montserrat-black;
+        }
+    }
+}
+
+.home-title-main {
+    color: $positive !important;
+    font-size: 21px !important;
+    line-height: 48px !important;
+    font-family: $montserrat-medium !important;
+}
+
+.custom-nav-bar {
+    .bar {
+        background: $light;
+    }
+}
+
+.bar-custom-other {
+    .bar {
+        background: $light;
+        border-bottom: 1px solid #eee;
+        .title {
+            color: $energized;
+            font-size: 16px;
+            font-family: $montserrat-regular;
+        }
+    }
+}
+
+.bar {
+    .button {
+        color: $calm;
+        padding-left: 7px;
+    }
+}
+
+.loading-container {
+    .loading {
+        background: transparent;
+        .spinner svg {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+
+.platform-ios {
+    .popover {
+        margin-top: -32px;
+        background-color: #fafafa;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, .35);
+        border-radius: 2px;
+        .item {
+            border-color: #fafafa;
+            background-color: #fafafa;
+            color: #4d4d4d;
+        }
+        .scroll-content {
+            margin: 2px 0;
+            border-radius: 0px;
+        }
+    }
+}
+
+.platform-ios .popover .platform-ios .popover-backdrop,
+.platform-ios .popover-backdrop.active {
+    background-color: transparent;
+}
+
+drawer {
+    ul {
+        &.list {
+            .item {
+                color: #41444C;
+                font-size: 14px !important;
+                font-weight: 100;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                &.activated {
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+    }
+}
+
+.select-placeholder {
+    display: none;
+}
+
+.form-validation-warning {
+    border-bottom: 1px solid red !important;
+}
+
+.form-validation-warning-remove {
+    border-bottom: none !important;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.text-color {
+    &.approved {
+        color: $approved !important;
+    }
+    &.rejected {
+        color: $rejected !important;
+    }
+    &.pending {
+        color: $pending !important;
+    }
+    &.paid {
+        color: $paid !important;
+    }
+}
+
+.bg {
+    &.approved {
+        background-color: $approved !important;
+    }
+    &.rejected {
+        background-color: $rejected !important;
+    }
+    &.pending {
+        background-color: $pending !important;
+    }
+    &.paid {
+        background-color: $paid !important;
+    }
+}
+
+.text-selectable {
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+
+/*********************Custom Icons*******************************/
+
+
+.ionicseed-filter-icon-outline {
+    content: url('../assets/images/filter_outline.png');
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+}
+
+.ionicseed-logout-grey {
+    content: url('../assets/images/logout_grey.png');
+    width: 20px;
+    height: 20px !important;
+    margin-left: 8px;
+    margin-top: 12px;
+}

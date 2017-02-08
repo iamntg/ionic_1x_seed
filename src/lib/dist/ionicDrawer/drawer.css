@@ -1,0 +1,77 @@
+/**
+* DRAWER
+*/
+
+drawer {
+  display: block;
+  position: fixed;
+  width: 270px;
+  height: 100%;
+  z-index: 100;
+  top: 0px;
+  /*  background-color: rgba(0, 0, 0, 0.8);*/
+  /*  background-color: rgba(255, 255, 255, 0.8);*/
+  background-color: #fff;
+  left: -5px;
+}
+drawer.animate {
+  -webkit-transition: all ease-in-out 400ms;
+  transition: all ease-in-out 400ms;
+}
+drawer.left {
+  -webkit-transform: translate3d(-101%, 0, 0);
+  transform: translate3d(-101%, 0, 0);
+  -webkit-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.drawer-open .drawer-content .pane,
+.drawer-open .drawer-content .scroll-content {
+  pointer-events: none;
+}
+drawer .item-icon-left .icon {
+  font-size: 24px;
+  padding-bottom: 2px;
+}
+drawer .item .item-content.activated {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+drawer a.item-content,
+drawer .clickable {
+  color: #41444C;
+  font-size: 14px !important;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+drawer .item {
+  background-color: rgba(0, 0, 0, 0);
+}
+drawer .item-complex .item-content {
+  background-color: rgba(0, 0, 0, 0);
+}
+.platform-android4_0 drawer.left {
+  box-shadow: none;
+  border-left: 0px;
+  border-right: 0px;
+}
+/*
+ion-side-menu .current a.item-content,
+ion-side-menu .clickable.current,
+drawer .current a.item-content,
+drawer .clickable.current {
+  color: #343434 !important;
+}
+.drawer-open ion-pane.pane {
+  background-color: rgb(0, 0, 0);
+}
+.drawer-open view {
+  background-color: rgb(0, 0, 0);
+}
+.menu-open ion-view.pane,
+.drawer-open ion-view.pane {
+  opacity: 0.4;
+}
+*/

@@ -1,0 +1,45 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-app-version": {
+            "PACKAGE_NAME": "com.tieche.tlink"
+        },
+        "cordova-plugin-appminimize": {
+            "PACKAGE_NAME": "com.tieche.tlink"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.tieche.tlink"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.tieche.tlink"
+        },
+        "cordova-plugin-license": {
+            "PACKAGE_NAME": "com.tieche.tlink"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.tieche.tlink"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.tieche.tlink"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.tieche.tlink"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.tieche.tlink"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.tieche.tlink"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.tieche.tlink"
+        }
+    },
+    "dependent_plugins": {}
+}

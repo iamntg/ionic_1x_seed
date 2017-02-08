@@ -1,0 +1,92 @@
+{
+    "cordova-plugin-device": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-device"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-console": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-console"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-whitelist": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-whitelist@1.3.0"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-splashscreen": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-splashscreen@4.0.0"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-statusbar": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-statusbar@2.2.0"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-x-toast": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-network-information": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-network-information"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-appminimize": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/tomloprod/cordova-plugin-appminimize.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-app-version": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-app-version"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "ionic-plugin-keyboard": {
+        "source": {
+            "type": "registry",
+            "id": "ionic-plugin-keyboard@1.0.8"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-x-socialsharing": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-x-socialsharing"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}

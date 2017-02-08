@@ -1,0 +1,28 @@
+<ion-view view-title="Login" hide-nav-bar="true">
+    <ion-content class="ionicseed-login-page-flex">
+        <section class="login-container">
+            <div class="row login-header no-padding ">
+                <div class="col text-center login-img-cover">
+                    <div class="login-heading">
+                        <div class="text-center page-title">Login</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row login-form-row">
+                <form novalidate name="loginForm">
+                    <div class="list list-inset login-input-fields">
+                        <label class="item item-input">
+                            <img src="assets/images/user_icon.svg" alt="user_icon">
+                            <input type="text" placeholder="Username" ng-model="loginCtrl.auth.userName" autocomplete="on" required>
+                        </label>
+                        <label class="item item-input">
+                            <img src="assets/images/pass_icon.svg" alt="user_password">
+                            <input type="password" placeholder="Password" ng-model="loginCtrl.auth.password" ng-paste="$event.preventDefault()" required>
+                        </label>
+                    </div>
+                    <button type="submit" class="button button-block button-positive login-button" ng-click="loginCtrl.login()">Login</button>
+                </form>
+            </div>
+        </section>
+    </ion-content>
+</ion-view>
