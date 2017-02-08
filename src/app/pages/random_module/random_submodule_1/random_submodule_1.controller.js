@@ -25,7 +25,6 @@
 
 
         _self.fabButtonClick = function() {
-            alert("FAB clicked!! - Navigating to next page!");
             $state.go('app.random_submodule_2');
         }
 

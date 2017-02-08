@@ -1,7 +1,21 @@
-<ion-view view-title="Random Module 2"> 
+<ion-view view-title="Random Module 2">
     <ion-content scroll="false" class="ionicseed-activity-list-page" ng-init="randomSubModule2Ctrl.initialize()" on-touch="onTouch()">
-
-    
+        <div class="card">
+            <div class="item item-text-wrap">
+                <div class="item range">
+                    <i class="icon ion-volume-low"></i>
+                    <input type="range" name="volume">
+                    <i class="icon ion-volume-high"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-text-wrap">
+                This is also a basic Card view.
+                <br>
+                <br> You can click on the Floating Action Button(FAB) below to navigate to open a random modal popup.
+            </div>
+        </div>
         <ion-floating-button click="randomSubModule2Ctrl.fabButtonClick()" has-footer="false" button-color="#ff6347" icon="ion-load-d" icon-color="#fff">
         </ion-floating-button>
     </ion-content>

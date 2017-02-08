@@ -3,6 +3,25 @@
         <h1 class="title">Random Sub Module Modal</h1>
     </ion-header-bar>
     <ion-content scroll="true" on-touch="onTouch()" ng-init="randomSubModuleModalCtrl.initialize()" class="padding">
+        <div class="list">
+            <a class="item item-icon-left" href="#">
+                <i class="icon ion-email"></i> Check mail
+            </a>
+            <a class="item item-icon-left item-icon-right" href="#">
+                <i class="icon ion-chatbubble-working"></i> Call Ma
+                <i class="icon ion-ios-telephone-outline"></i>
+            </a>
+            <a class="item item-icon-left" href="#">
+                <i class="icon ion-mic-a"></i> Record album
+                <span class="item-note">
+			      Grammy
+			    </span>
+            </a>
+            <a class="item item-icon-left" href="#">
+                <i class="icon ion-person-stalker"></i> Friends
+                <span class="badge badge-energized">6</span>
+            </a>
+        </div>
         <button class="button button-block button-positive close-button" ng-click="randomSubModuleModalCtrl.closeModal()">Close Modal</button>
     </ion-content>
 </ion-modal-view>
