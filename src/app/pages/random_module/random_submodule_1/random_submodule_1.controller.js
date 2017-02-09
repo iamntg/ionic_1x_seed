@@ -10,7 +10,7 @@
         .controller('randomSubModule1Controller', randomSubModule1Controller);
 
     /** @ngInject */
-    function randomSubModule1Controller($rootScope, $state, $window, httpService, showToast, TlinkConstants, pageLoading, $ionicPopover, $scope, $filter, ionicDatePicker, $ionicPopup, $ionicScrollDelegate, $ionicListDelegate, backButtonNavigation, $timeout, $ionicHistory) {
+    function randomSubModule1Controller($rootScope, $state, $window, httpService, showToast, NTGIonicSeedConstants, pageLoading, $ionicPopover, $scope, $filter, ionicDatePicker, $ionicPopup, $ionicScrollDelegate, $ionicListDelegate, backButtonNavigation, $timeout, $ionicHistory) {
 
         var _self = this; //_self will the current object of this controller
         $rootScope.stateValue = $state.current.name; // custom header 
@@ -31,6 +31,6 @@
     }
 
 
-    randomSubModule1Controller.$inject = ['$rootScope', '$state', '$window', 'httpService', 'showToast', 'TlinkConstants', 'pageLoading', '$ionicPopover', '$scope', '$filter', 'ionicDatePicker', '$ionicPopup', '$ionicScrollDelegate', '$ionicListDelegate', 'backButtonNavigation', '$timeout', '$ionicHistory'];
+    randomSubModule1Controller.$inject = ['$rootScope', '$state', '$window', 'httpService', 'showToast', 'NTGIonicSeedConstants', 'pageLoading', '$ionicPopover', '$scope', '$filter', 'ionicDatePicker', '$ionicPopup', '$ionicScrollDelegate', '$ionicListDelegate', 'backButtonNavigation', '$timeout', '$ionicHistory'];
 
 })();

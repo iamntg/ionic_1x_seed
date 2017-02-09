@@ -10,7 +10,7 @@
         .controller('sideMenuController', sideMenuController);
 
     /** @ngInject */
-    function sideMenuController($scope, $window, $state, TlinkConstants, showToast, deviceDetails, httpService, $ionicPopup) {
+    function sideMenuController($scope, $window, $state, NTGIonicSeedConstants, showToast, deviceDetails, httpService, $ionicPopup) {
 
         var _self = this; //_self will the current object of this controller   
         _self.appVersion = deviceDetails.getAppVersion(); // app version
@@ -82,7 +82,7 @@
             $window.localStorage.clear();
 
             //show toast for logout message
-            showToast.showLongBottom(TlinkConstants.successMessage.logoutMessage);
+            showToast.showLongBottom(NTGIonicSeedConstants.successMessage.logoutMessage);
 
             //redirect to specified pages
             $state.go("login");
@@ -101,6 +101,6 @@
 
     }
 
-    sideMenuController.$inject = ['$scope', '$window', '$state', 'TlinkConstants', 'showToast', 'deviceDetails', 'httpService', '$ionicPopup'];
+    sideMenuController.$inject = ['$scope', '$window', '$state', 'NTGIonicSeedConstants', 'showToast', 'deviceDetails', 'httpService', '$ionicPopup'];
 
 })();

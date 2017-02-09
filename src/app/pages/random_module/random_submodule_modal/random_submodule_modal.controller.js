@@ -10,7 +10,7 @@
 		.controller('randomSubModuleModalController', randomSubModuleModalController);
 
 	/** @ngInject */
-	function randomSubModuleModalController($rootScope, $scope, $state, $window, httpService, showToast, TlinkConstants, pageLoading, ionicDatePicker, $filter, $ionicScrollDelegate) {
+	function randomSubModuleModalController($rootScope, $scope, $state, $window, httpService, showToast, NTGIonicSeedConstants, pageLoading, ionicDatePicker, $filter, $ionicScrollDelegate) {
 
 		var _self = this; //_self will the current object of this controller
 
@@ -22,6 +22,6 @@
         
 	}
 
-	randomSubModuleModalController.$inject = ['$rootScope', '$scope', '$state', '$window', 'httpService', 'showToast', 'TlinkConstants', 'pageLoading', 'ionicDatePicker', '$filter', '$ionicScrollDelegate'];
+	randomSubModuleModalController.$inject = ['$rootScope', '$scope', '$state', '$window', 'httpService', 'showToast', 'NTGIonicSeedConstants', 'pageLoading', 'ionicDatePicker', '$filter', '$ionicScrollDelegate'];
 
 })();

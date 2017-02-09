@@ -10,7 +10,7 @@
 		.controller('parentController', parentController);
 
 	
-	function parentController($scope, $window, $interval, httpService, TlinkConstants, $rootScope, deviceDetails, $ionicPlatform) {
+	function parentController($scope, $window, $interval, httpService, NTGIonicSeedConstants, $rootScope, deviceDetails, $ionicPlatform) {
 		
         var _self = this; //_self will the current object of this controller
           
@@ -19,6 +19,6 @@
 
 	}
 
-	parentController.$inject = ['$scope', '$window', '$interval', 'httpService', 'TlinkConstants', '$rootScope', 'deviceDetails', '$ionicPlatform'];
+	parentController.$inject = ['$scope', '$window', '$interval', 'httpService', 'NTGIonicSeedConstants', '$rootScope', 'deviceDetails', '$ionicPlatform'];
 
 })();

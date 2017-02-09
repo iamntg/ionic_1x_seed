@@ -10,7 +10,7 @@
         .controller('loginController', loginController);
 
     /** @ngInject */
-    function loginController($state, $window, $timeout, $ionicPlatform, $ionicLoading, httpService, showToast, TlinkConstants, pageLoading) {
+    function loginController($state, $window, $timeout, $ionicPlatform, $ionicLoading, httpService, showToast, NTGIonicSeedConstants, pageLoading) {
 
         var _self = this; //_self will the current object of this controller
 
@@ -35,7 +35,7 @@
             if ($state.current.name == "login") {
                 if (backbutton == 0) {
                     backbutton++;
-                    showToast.showLongBottom(TlinkConstants.errorMessage.exitApp);
+                    showToast.showLongBottom(NTGIonicSeedConstants.errorMessage.exitApp);
                     $timeout(function () {
                         backbutton = 0;
                     }, 5000);
@@ -53,9 +53,9 @@
         // user login
         _self.login = function(auth) {
             if (_self.auth.userName == "" || _self.auth.userName == undefined) {
-                showToast.showLongBottom(TlinkConstants.errorMessage.noUserId);
+                showToast.showLongBottom(NTGIonicSeedConstants.errorMessage.noUserId);
             } else if (_self.auth.password == "" || _self.auth.password == undefined) {
-                showToast.showLongBottom(TlinkConstants.errorMessage.noPassword);
+                showToast.showLongBottom(NTGIonicSeedConstants.errorMessage.noPassword);
             } else {
                 //show page loading screen
                 pageLoading.show();
@@ -75,6 +75,6 @@
 
     }
 
-    loginController.$inject = ['$state', '$window', '$timeout', '$ionicPlatform', '$ionicLoading', 'httpService', 'showToast', 'TlinkConstants', 'pageLoading'];
+    loginController.$inject = ['$state', '$window', '$timeout', '$ionicPlatform', '$ionicLoading', 'httpService', 'showToast', 'NTGIonicSeedConstants', 'pageLoading'];
 
 })();

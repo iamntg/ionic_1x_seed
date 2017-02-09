@@ -10,14 +10,14 @@
 		.factory('showToast', showToast);
 
 
-	function showToast($log, $ionicPlatform, $cordovaToast, TlinkConstants) {
+	function showToast($log, $ionicPlatform, $cordovaToast, NTGIonicSeedConstants) {
         
         $ionicPlatform.ready(function() {
-            TlinkConstants.deviceInformation = ionic.Platform.device();
+            NTGIonicSeedConstants.deviceInformation = ionic.Platform.device();
         });
         
 		var _showLongBottomToast = function (message) {
-			if (Object.keys(TlinkConstants.deviceInformation).length) {
+			if (Object.keys(NTGIonicSeedConstants.deviceInformation).length) {
                 $cordovaToast.showLongBottom(message);
             } else {
                 $log.log(message);
@@ -32,6 +32,6 @@
 
 	}
 
-	showToast.$inject = ['$log', '$ionicPlatform', '$cordovaToast', 'TlinkConstants'];
+	showToast.$inject = ['$log', '$ionicPlatform', '$cordovaToast', 'NTGIonicSeedConstants'];
 
 })();

@@ -10,15 +10,15 @@
 		.factory('deviceDetails', deviceDetails);
 
 
-	function deviceDetails($log, $ionicPlatform, $cordovaDevice, $cordovaAppVersion, TlinkConstants, $window) {
+	function deviceDetails($log, $ionicPlatform, $cordovaDevice, $cordovaAppVersion, NTGIonicSeedConstants, $window) {
 
         $ionicPlatform.ready(function() {
-            TlinkConstants.deviceInformation = ionic.Platform.device();
+            NTGIonicSeedConstants.deviceInformation = ionic.Platform.device();
         });
         
 		var _getDeviceId = function () {
 			var uuid = "";
-			if (Object.keys(TlinkConstants.deviceInformation).length) {
+			if (Object.keys(NTGIonicSeedConstants.deviceInformation).length) {
                 uuid = $cordovaDevice.getUUID();
                 $window.localStorage['deviceId'] = uuid;
             } else if($window.localStorage['deviceId'] && $window.localStorage['deviceId'] != "") {
@@ -47,6 +47,6 @@
 
 	}
 
-	deviceDetails.$inject = ['$log', '$ionicPlatform', '$cordovaDevice', '$cordovaAppVersion', 'TlinkConstants', '$window'];
+	deviceDetails.$inject = ['$log', '$ionicPlatform', '$cordovaDevice', '$cordovaAppVersion', 'NTGIonicSeedConstants', '$window'];
 
 })();

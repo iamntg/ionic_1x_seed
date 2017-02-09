@@ -10,7 +10,7 @@
  	.factory('httpService', httpService);
 
 
- 	function httpService($rootScope, $http, $log, $state, $window, NTGIonicSeedConfiguration, TlinkConstants, showToast, pageLoading, deviceDetails) {
+ 	function httpService($rootScope, $http, $log, $state, $window, NTGIonicSeedConfiguration, NTGIonicSeedConstants, showToast, pageLoading, deviceDetails) {
 
  		var baseUrl = NTGIonicSeedConfiguration.environments[NTGIonicSeedConfiguration.environment].urlBase;
 		
@@ -27,7 +27,7 @@
 				}
 			}, function getError(errResponse) {
 				if(errResponse.status == -1 || !errResponse.data){
-					showErrorToast(TlinkConstants.errorMessage.serverDown);
+					showErrorToast(NTGIonicSeedConstants.errorMessage.serverDown);
 				}
 				cbError(errResponse);
 			});
@@ -39,7 +39,7 @@
 			// sending device id with each request for security
             requestParams.deviceToken = deviceDetails.getDeviceId();
 
-            if(TlinkConstants.isNetworkOn == true){
+            if(NTGIonicSeedConstants.isNetworkOn == true){
                 $http.post(baseUrl+url, requestParams).then(function getSuccess(succResponse) {
                     if (typeof succResponse !== 'undefined') {
                             var isOk = true;
@@ -72,27 +72,27 @@
                                     }                                    
                                 } else  {
                                     pageLoading.hide();
-                                    showErrorToast(TlinkConstants.errorMessage.serverDown);
+                                    showErrorToast(NTGIonicSeedConstants.errorMessage.serverDown);
                                 } 
                             } else {
                                 pageLoading.hide();
-                                showErrorToast(TlinkConstants.errorMessage.serverDown);
+                                showErrorToast(NTGIonicSeedConstants.errorMessage.serverDown);
                             }
                         } else {
                             pageLoading.hide();
-                            showErrorToast(TlinkConstants.errorMessage.serverDown);
+                            showErrorToast(NTGIonicSeedConstants.errorMessage.serverDown);
                         }
 
                 }, function getError(errResponse) {
                     if(errResponse.status == -1 || !errResponse.data){
                         pageLoading.hide();
-                        showErrorToast(TlinkConstants.errorMessage.serverDown);
+                        showErrorToast(NTGIonicSeedConstants.errorMessage.serverDown);
                     }
                     cbError(errResponse);
                 });
             } else {
                 pageLoading.hide();
-                showErrorToast(TlinkConstants.errorMessage.noConnection);
+                showErrorToast(NTGIonicSeedConstants.errorMessage.noConnection);
             }
 		};
 
@@ -122,18 +122,18 @@
 							if (succResponse.status === 200) {
 								cbSuccess(succResponse.data);
 							} else  {
-								showErrorToast(TlinkConstants.errorMessage.serverDown);
+								showErrorToast(NTGIonicSeedConstants.errorMessage.serverDown);
 							} 
 						} else {
-							showErrorToast(TlinkConstants.errorMessage.serverDown);
+							showErrorToast(NTGIonicSeedConstants.errorMessage.serverDown);
 						}
 					} else {
-						showErrorToast(TlinkConstants.errorMessage.serverDown);
+						showErrorToast(NTGIonicSeedConstants.errorMessage.serverDown);
 					}
 
 			}, function getError(errResponse) {
 				if(errResponse.status == -1 || !errResponse.data){
-					showErrorToast(TlinkConstants.errorMessage.serverDown);
+					showErrorToast(NTGIonicSeedConstants.errorMessage.serverDown);
 				}
 				cbError(errResponse);
 			});
@@ -162,19 +162,19 @@
 							if (succResponse.status === 200) {
 								cbSuccess(succResponse.data);
 							} else  {
-								showErrorToast(TlinkConstants.errorMessage.serverDown);
+								showErrorToast(NTGIonicSeedConstants.errorMessage.serverDown);
 							} 
 						} else {
-							showErrorToast(TlinkConstants.errorMessage.serverDown);
+							showErrorToast(NTGIonicSeedConstants.errorMessage.serverDown);
 						}
 					} else {
-						showErrorToast(TlinkConstants.errorMessage.serverDown);
+						showErrorToast(NTGIonicSeedConstants.errorMessage.serverDown);
 					}
 
 			}, function getError(errResponse) {
 				console.log(errResponse);
 				if(errResponse.status === -1 || !errResponse.data){
-					showErrorToast(TlinkConstants.errorMessage.serverDown);
+					showErrorToast(NTGIonicSeedConstants.errorMessage.serverDown);
 				}
 				cbError(errResponse);
 			});
@@ -190,6 +190,6 @@
 
  	}
 	
-	httpService.$inject = ['$rootScope', '$http', '$log', '$state', '$window', 'NTGIonicSeedConfiguration', 'TlinkConstants', 'showToast', 'pageLoading', 'deviceDetails'];
+	httpService.$inject = ['$rootScope', '$http', '$log', '$state', '$window', 'NTGIonicSeedConfiguration', 'NTGIonicSeedConstants', 'showToast', 'pageLoading', 'deviceDetails'];
 
  })();

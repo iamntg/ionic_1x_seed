@@ -10,7 +10,7 @@
         .controller('homeController', homeController);
 
     /** @ngInject */
-    function homeController($scope, $rootScope, $state, $window, $timeout, $ionicPlatform, $ionicHistory, httpService, showToast, TlinkConstants, pageLoading, $interval, deviceDetails) {
+    function homeController($scope, $rootScope, $state, $window, $timeout, $ionicPlatform, $ionicHistory, httpService, showToast, NTGIonicSeedConstants, pageLoading, $interval, deviceDetails) {
 
         var _self = this; //_self will the current object of this controller
         $rootScope.stateValue = $state.current.name; // custom design for home screen header bar
@@ -27,7 +27,7 @@
             if ($state.current.name == "app.home") {
                 if (backbutton == 0) {
                     backbutton++;
-                    showToast.showLongBottom(TlinkConstants.errorMessage.exitApp);
+                    showToast.showLongBottom(NTGIonicSeedConstants.errorMessage.exitApp);
                     $timeout(function () {
                         backbutton = 0;
                     }, 5000);
@@ -49,6 +49,6 @@
 
     }
 
-    homeController.$inject = ['$scope', '$rootScope', '$state', '$window', '$timeout', '$ionicPlatform', '$ionicHistory', 'httpService', 'showToast', 'TlinkConstants', 'pageLoading', '$interval', 'deviceDetails'];
+    homeController.$inject = ['$scope', '$rootScope', '$state', '$window', '$timeout', '$ionicPlatform', '$ionicHistory', 'httpService', 'showToast', 'NTGIonicSeedConstants', 'pageLoading', '$interval', 'deviceDetails'];
 
 })();

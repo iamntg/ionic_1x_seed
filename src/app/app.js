@@ -18,7 +18,7 @@ angular.module('NTGIonicSeed', [
 	'NTGIonicSeed.pages'
 ])
 
-.run(function ($ionicPlatform, $rootScope, TlinkConstants, showToast, $window, $cordovaAppVersion) {
+.run(function ($ionicPlatform, $rootScope, NTGIonicSeedConstants, showToast, $window, $cordovaAppVersion) {
 	$ionicPlatform.ready(function () {
 		// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
 		// for form inputs)
@@ -34,7 +34,7 @@ angular.module('NTGIonicSeed', [
            //  StatusBar.hide();
 		}
 
-		TlinkConstants.deviceInformation = ionic.Platform.device();
+		NTGIonicSeedConstants.deviceInformation = ionic.Platform.device();
 		$cordovaAppVersion.getVersionNumber().then(function(version) {
             $window.localStorage['appVersion'] = version;
         });
@@ -42,14 +42,14 @@ angular.module('NTGIonicSeed', [
         // listen for Online event
         $rootScope.$on('$cordovaNetwork:online', function(event, networkState){
             var onlineState = networkState;
-            TlinkConstants.isNetworkOn = true;
+            NTGIonicSeedConstants.isNetworkOn = true;
         })
 
         // listen for Offline event
         $rootScope.$on('$cordovaNetwork:offline', function(event, networkState){
             var offlineState = networkState;
-            TlinkConstants.isNetworkOn = false;
-            showToast.showLongBottom(TlinkConstants.errorMessage.offlineMessage);
+            NTGIonicSeedConstants.isNetworkOn = false;
+            showToast.showLongBottom(NTGIonicSeedConstants.errorMessage.offlineMessage);
         })
 	});
 });
