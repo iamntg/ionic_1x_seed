@@ -1,4 +1,4 @@
-# Ionic 1x Seed Project
+# Ionic 1x Seed Project [![Build Status](https://travis-ci.org/iamntg/ionic_1x_seed.svg?branch=master)](https://travis-ci.org/iamntg/ionic_1x_seed)
 A repository for ionic 1x seed projects with the best folder structure
 
 
