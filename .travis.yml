@@ -37,8 +37,34 @@ before_script:
 script:
   - gulp build
   - cordova platform rm android
+  
   - cordova plugin rm cordova-plugin-app-version
   - cordova plugin add cordova-plugin-app-version
+  - cordova plugin rm cordova-plugin-app-version
+  - cordova plugin add cordova-plugin-app-version
+  - cordova plugin rm cordova-plugin-appminimize
+  - cordova plugin add cordova-plugin-appminimize
+  - cordova plugin rm cordova-plugin-console
+  - cordova plugin add cordova-plugin-console
+  - cordova plugin rm cordova-plugin-device
+  - cordova plugin add cordova-plugin-device
+  - cordova plugin rm cordova-plugin-network-information
+  - cordova plugin add cordova-plugin-network-information
+  - cordova plugin rm cordova-plugin-splashscreen
+  - cordova plugin add cordova-plugin-splashscreen
+  - cordova plugin rm cordova-plugin-statusbar
+  - cordova plugin add cordova-plugin-statusbar
+  - cordova plugin rm cordova-plugin-whitelist
+  - cordova plugin add cordova-plugin-whitelist
+  - cordova plugin rm cordova-plugin-x-socialsharing
+  - cordova plugin add cordova-plugin-x-socialsharing
+  - cordova plugin rm cordova-plugin-x-toast
+  - cordova plugin add cordova-plugin-x-toast
+  - cordova plugin rm ionic-plugin-keyboard
+  - cordova plugin add ionic-plugin-keyboard
+  
+  - cordova plugin ls
+  
   - ionic resources android
   - cordova platform add android@5.2.2
   - cordova prepare
