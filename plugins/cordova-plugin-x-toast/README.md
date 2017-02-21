@@ -1,6 +1,6 @@
 # PhoneGap Toast plugin
 
-for Android, iOS and WP8, by [Eddy Verbruggen](http://www.x-services.nl/phonegap-toast-plugin/796)
+for Android, iOS, WP8, Windows and BlackBerry by [Eddy Verbruggen](http://www.x-services.nl/phonegap-toast-plugin/796)
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=eddyverbruggen%40gmail%2ecom&lc=US&item_name=cordova%2dplugin%2dtoast&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)
 If you like this plugin and want to say thanks please send a PR or donation. Both are equally appreciated!
@@ -276,6 +276,7 @@ The Android code was entirely created by me.
 For iOS most credits go to this excellent [Toast for iOS project by Charles Scalesse] (https://github.com/scalessec/Toast).
 
 ## 6. CHANGELOG
+- 2.6.0: Windows support!
 - 2.5.2: Multi-line wrapping Toasts are now center aligned.
 - 2.5.1: You can now specify the `textSize` used in the font for iOS and Android.
 - 2.5.0: By popular demand: Specify the duration of the Toast on iOS and Android. Pass in `short` (2000ms), `long` (4000ms), or any nr of milliseconds: `900`.

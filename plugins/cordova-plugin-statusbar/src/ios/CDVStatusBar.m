@@ -90,6 +90,11 @@ static const void *kStatusBarStyle = &kStatusBarStyle;
     }
 }
 
+-(void)cordovaViewWillAppear:(NSNotification*)notification
+{
+    [self resizeWebView];
+}
+
 -(void)statusBarDidChangeFrame:(NSNotification*)notification
 {
     //add a small delay for iOS 7 ( 0.1 seconds )
@@ -111,6 +116,8 @@ static const void *kStatusBarStyle = &kStatusBarStyle;
     [[UIApplication sharedApplication] addObserver:self forKeyPath:@"statusBarHidden" options:NSKeyValueObservingOptionNew context:NULL];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarDidChangeFrame:) name: UIApplicationDidChangeStatusBarFrameNotification object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cordovaViewWillAppear:) name: @"CDVViewWillAppearNotification" object:nil];
 
     _statusBarOverlaysWebView = YES; // default
 
@@ -182,7 +189,7 @@ static const void *kStatusBarStyle = &kStatusBarStyle;
     CGRect statusBarFrame = [UIApplication sharedApplication].statusBarFrame;
 
     if ([[UIApplication sharedApplication]statusBarOrientation] == UIInterfaceOrientationPortraitUpsideDown &&
-        statusBarFrame.size.height + statusBarFrame.origin.y == [[UIScreen mainScreen] bounds].size.height) {
+        statusBarFrame.size.height + statusBarFrame.origin.y == [self.viewController.view.window bounds].size.height) {
 
         // When started in upside-down orientation on iOS 7, status bar will be bound to lower edge of the
         // screen (statusBarFrame.origin.y will be somewhere around screen height). In this case we need to
@@ -200,8 +207,8 @@ static const void *kStatusBarStyle = &kStatusBarStyle;
 
 - (CGRect) invertFrameIfNeeded:(CGRect)rect {
     // landscape is where (width > height). On iOS < 8, we need to invert since frames are
-    // always in Portrait context
-    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]) && (rect.size.width < rect.size.height)) {
+    // always in Portrait context. Do not run this on ios 8 or above to avoid breaking ipad pro multitask layout
+    if (!IsAtLeastiOSVersion(@"8.0") && UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
         CGFloat temp = rect.size.width;
         rect.size.width = rect.size.height;
         rect.size.height = temp;
@@ -440,7 +447,7 @@ static const void *kStatusBarStyle = &kStatusBarStyle;
     BOOL isIOS7 = (IsAtLeastiOSVersion(@"7.0"));
 
     if (isIOS7) {
-        CGRect bounds = [[UIScreen mainScreen] bounds];
+        CGRect bounds = [self.viewController.view.window bounds];
         bounds = [self invertFrameIfNeeded:bounds];
 
         if (UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
@@ -466,16 +473,16 @@ static const void *kStatusBarStyle = &kStatusBarStyle;
         CGRect statusBarFrame = [UIApplication sharedApplication].statusBarFrame;
         statusBarFrame = [self invertFrameIfNeeded:statusBarFrame];
         CGRect frame = self.webView.frame;
+        CGFloat height = statusBarFrame.size.height;
 
         if (!self.statusBarOverlaysWebView) {
-            frame.origin.y = statusBarFrame.size.height;
-            frame.size.height -= statusBarFrame.size.height;
+            // CB-10158 If a full screen video is playing the status bar height will be 0, set it to 20
+            frame.origin.y = height > 0 ? height: 20;
         } else {
-            // even if overlay is used, we want to handle in-call/recording/hotspot larger status bar
-            CGFloat height = statusBarFrame.size.height;
+            // Even if overlay is used, we want to handle in-call/recording/hotspot larger status bar
             frame.origin.y = height >= 20 ? height - 20 : 0;
-            frame.size.height -= frame.origin.y;
         }
+        frame.size.height -= frame.origin.y;
         self.webView.frame = frame;
     } else {
         CGRect bounds = [[UIScreen mainScreen] applicationFrame];

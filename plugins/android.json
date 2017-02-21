@@ -8,37 +8,37 @@
     },
     "installed_plugins": {
         "cordova-plugin-app-version": {
-            "PACKAGE_NAME": "com.tieche.tlink"
+            "PACKAGE_NAME": "com.ionic.seed"
         },
         "cordova-plugin-appminimize": {
-            "PACKAGE_NAME": "com.tieche.tlink"
+            "PACKAGE_NAME": "com.ionic.seed"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.tieche.tlink"
+            "PACKAGE_NAME": "com.ionic.seed"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.tieche.tlink"
-        },
-        "cordova-plugin-license": {
-            "PACKAGE_NAME": "com.tieche.tlink"
+            "PACKAGE_NAME": "com.ionic.seed"
         },
         "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.tieche.tlink"
+            "PACKAGE_NAME": "com.ionic.seed"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.tieche.tlink"
+            "PACKAGE_NAME": "com.ionic.seed"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.tieche.tlink"
+            "PACKAGE_NAME": "com.ionic.seed"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.tieche.tlink"
+            "PACKAGE_NAME": "com.ionic.seed"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.ionic.seed"
         },
         "cordova-plugin-x-toast": {
-            "PACKAGE_NAME": "com.tieche.tlink"
+            "PACKAGE_NAME": "com.ionic.seed"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.tieche.tlink"
+            "PACKAGE_NAME": "com.ionic.seed"
         }
     },
     "dependent_plugins": {}
