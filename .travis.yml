@@ -37,13 +37,14 @@ before_script:
 script:
   - gulp build
   - cordova platform rm android
+  - ionic hooks add
   
   - cordova plugin rm cordova-plugin-app-version
   - cordova plugin add cordova-plugin-app-version
   - cordova plugin rm cordova-plugin-app-version
   - cordova plugin add cordova-plugin-app-version
   - cordova plugin rm cordova-plugin-appminimize
-  - cordova plugin add cordova-plugin-appminimize
+  - cordova plugin add https://github.com/tomloprod/cordova-plugin-appminimize.git
   - cordova plugin rm cordova-plugin-console
   - cordova plugin add cordova-plugin-console
   - cordova plugin rm cordova-plugin-device
