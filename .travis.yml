@@ -36,6 +36,9 @@ before_script:
 
 script:
   - gulp build
+  - cordova platform rm android
+  - cordova plugin rm cordova-plugin-app-version
+  - cordova plugin add cordova-plugin-app-version
   - cordova platform add android@5.2.2
   - cordova prepare
   - cordova build android --release
