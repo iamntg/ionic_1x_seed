@@ -2,7 +2,7 @@ sudo: false
 
 language: node_js
 node_js:
-  - "5.1"
+  - "4.4.4"
 
 addons:
   apt:
@@ -17,6 +17,7 @@ env:
   CXX=g++-4.8
 
 install:
+  - rm -fr node_modules
   - npm install -g bower cordova ionic
   - npm install
   - npm install -g gulp
